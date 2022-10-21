@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To do list</title>
+    <style>
+        body{
+            margin: 0%;
+            
+        }
+        #titulo {
+            text-align: center;
+            padding: 20px;
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .itens{
+            border: 2px solid rgba(206, 50, 206, 0.562);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    
+    <div id="inicio" style="background-color: rgb(165, 69, 141); height: 130px; ">
+        <h1 id="titulo">To Do List</h1>
+        <input type="text" id="texto" placeholder="Digite suas tarefas" style="width: 400PX; height: 20px;" >
+        <button class="button" onclick="add();" style="width: 60PX; height: 25px;">criar</button>
+        <br>
+    </div>
+        <div id="divAtual"></div>
+
+    
+    <script>
+        function add()
+        {
+            var conteudo = document.getElementById ('texto').value;
+            var novoElemento = document.createTextNode (conteudo);
+            var divNova = document.createElement('div');
+            divNova.className="itens";
+            var botaoExcluir = document.createElement('button');
+            var list = document.createElement('input');
+            list.setAttribute('type', 'checkbox');
+            botaoExcluir.className="botaoExcluir";
+            botaoExcluir.innerHTML = "excluir"
+            botaoExcluir.addEventListener ("click", function()
+            {
+                divNova.remove(); 
+            })
+            divNova.appendChild(list);
+            divNova.appendChild(novoElemento);
+            divNova.appendChild(botaoExcluir);
+            document.getElementById("divAtual").appendChild(divNova);
+
+        }
+
+    </script>
+    </center>
+</body>
+
+</html
