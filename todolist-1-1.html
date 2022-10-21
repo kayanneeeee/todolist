@@ -22,19 +22,32 @@
             justify-content: space-around;
             padding: 5px;
         }
+        #login{
+            background-color: rgb(148, 71, 144);
+            height: 1000px;
+            padding: 140px;
+        }
     </style>
 </head>
 <body>
     <center>
     
-    <div id="inicio" style="background-color: rgb(165, 69, 141); height: 130px; ">
+    <div id="inicio" style="background-color: rgb(165, 69, 141); height: 130px; display:none;">
         <h1 id="titulo">To Do List</h1>
         <input type="text" id="texto" placeholder="Digite suas tarefas" style="width: 400PX; height: 20px;" >
         <button class="button" onclick="add();" style="width: 60PX; height: 25px;">criar</button>
         <br>
     </div>
         <div id="divAtual"></div>
-
+        <div id="login">
+            <h1>LOGIN</h1>
+            <input type="text" placeholder="nome " style="width: 250PX; height: 20px;"><br><br>
+            <input type="text" placeholder="login" style="width: 250PX; height: 20px;"><br><br>
+            <input type="email" placeholder="email" style="width: 250PX; height: 20px;"><br><br>
+            <input type="password" placeholder="senha" style="width: 250PX; height: 20px;"><br><br>
+            <input type="password" placeholder="confirme a senha" style="width: 250PX; height: 20px;"><br><br>
+            <button class="button" style="width: 60PX; height: 25px;">login</button>
+        </div>
     
     <script>
         function add()
