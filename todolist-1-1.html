@@ -41,12 +41,12 @@
         <div id="divAtual"></div>
         <div id="login">
             <h1>LOGIN</h1>
-            <input type="text" placeholder="nome " style="width: 250PX; height: 20px;"><br><br>
-            <input type="text" placeholder="login" style="width: 250PX; height: 20px;"><br><br>
-            <input type="email" placeholder="email" style="width: 250PX; height: 20px;"><br><br>
-            <input type="password" placeholder="senha" style="width: 250PX; height: 20px;"><br><br>
-            <input type="password" placeholder="confirme a senha" style="width: 250PX; height: 20px;"><br><br>
-            <button class="button" style="width: 60PX; height: 25px;">login</button>
+            <input type="text" id="nm" placeholder="nome " style="width: 250PX; height: 20px;"><br><br>
+            <input type="text" id="lo" placeholder="login" style="width: 250PX; height: 20px;"><br><br>
+            <input type="email" id="mail" placeholder="email" style="width: 250PX; height: 20px;"><br><br>
+            <input type="password" id="senha1" placeholder="senha" style="width: 250PX; height: 20px;"><br><br>
+            <input type="password" id="senha2"placeholder="confirme a senha" style="width: 250PX; height: 20px;"><br><br>
+            <button class="button" onclick="login();" style="width: 60PX; height: 25px;">login</button>
         </div>
     
     <script>
@@ -71,7 +71,38 @@
             document.getElementById("divAtual").appendChild(divNova);
 
         }
+        function limpar() {
+            for (var a = 0; a <= 10; a++)
+                document.getElementsByClassName('marcados')[a].remove();
+            a = 0;
+        }
 
+        function login() {
+            var senh1 = document.getElementById('senha1').value;
+            var senh2 = document.getElementById('senha2').value;
+            var nome = document.getElementById('nm').value;
+            var eemail = document.getElementById('mail').value;
+            var login = document.getElementById('lo').value;
+
+            if (login.length > 10 ) {
+                alert("preencha o login com ate 10 letras");
+            }
+            if  (nome.length < 10) {
+                alert("é necessario o nome ter mais de 10 letras")
+            }
+            if (eemail.includes('@')) {
+
+            } else {
+                alert("preencha com email valido")
+            }
+            if ((senh1 == senh2) && (senh1 != "")) {
+                document.getElementById("divAtual").style.display = "none";
+                document.getElementById("inicio").style.display = "inline";
+            }
+            else {
+                alert("senha invalida");
+            }   
+        }       
     </script>
     </center>
 </body>
